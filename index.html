@@ -2,17 +2,37 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <title>Онлайн магазин за тонер касети</title>
+  <title>TonerXpress – Тонер касети</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
       padding: 20px;
       text-align: center;
     }
 
-    h1 {
-      color: #333;
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .hero {
+      background-color: #007bff;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin: 10px 0 0;
     }
 
     .products {
@@ -20,15 +40,18 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding: 40px 20px;
+      background-color: #fff;
     }
 
     .product {
-      background-color: white;
+      background-color: #f9f9f9;
       border: 1px solid #ddd;
       border-radius: 10px;
       width: 280px;
       padding: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
     }
 
     .product img {
@@ -60,14 +83,28 @@
     .product button:hover {
       background-color: #1976D2;
     }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Добре дошли в TonerXpress</h1>
-  <p>Качествени тонер касети на страхотни цени!</p>
+  <header>
+    <h1>Добре дошли в TonerXpress</h1>
+  </header>
 
-  <div class="products">
+  <section class="hero">
+    <h2>Вашият онлайн магазин за тонер касети</h2>
+    <p>Качествени консумативи за принтери – бързо, лесно и на отлични цени.</p>
+  </section>
+
+  <section class="products">
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/71L2MyFR1ML._AC_SL1500_.jpg" alt="HP 106A">
       <h2>Тонер HP 106A</h2>
@@ -94,9 +131,11 @@
       <p>Цена: 42.00 лв</p>
       <button>Поръчай</button>
     </div>
-  </div>
+  </section>
+
+  <footer>
+    © 2025 TonerXpress – Всички права запазени. Свържете се с нас: info@tonerxpress.bg
+  </footer>
 
 </body>
 </html>
-
-     
