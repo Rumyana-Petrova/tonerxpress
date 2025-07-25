@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>TonerXpress – Тонер касети</title>
+  <style>
+    body {
+      margin: 0; font-family: Arial, sans-serif; display: flex; min-height: 100vh;
+      background: #f0f0f0;
+    }
+    .sidebar {
+      width: 220px; background: #333; color: #fff; position: fixed; top: 0; left: 0; bottom: 0;
+      padding-top: 30px; overflow-y: auto;
+    }
+    .sidebar a {
+      display: block; color: white; padding: 12px 20px; text-decoration: none; cursor: pointer;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background: #575757;
+    }
+    .main {
+      margin-left: 220px; flex: 1; padding: 20px 40px 60px; background: white;
+      box-shadow: inset 0 0 15px #ccc;
+      min-height: 100vh;
+    }
+    header {
+      background: #222; color: white; padding: 20px; text-align: center;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .hero {
+      background: #007bff; color: white; padding: 40px 20px; text-align: center;
+    }
+    #search {
+      width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+    .products {
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .product {
+      background: #f9f9f9; border: 1px solid #ddd; border-radius: 10px;
+      padding: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 600px; margin: auto;
+      cursor: pointer;
+      position: relative;
+    }
+    .product h2 {
+      font-size: 18px; color: #222; margin-top: 0;
+    }
+    .product p {
+      font-size: 14px; color: #555; margin: 5px 0;
+    }
+    .product img {
+      width: 100%; height: auto; border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .thumbnails {
+      display: flex; gap: 10px; justify-content: center;
+      margin-top: 10px;
+    }
+    .thumbnails img {
+      width: 60px; height: 40px; border-radius: 5px; cursor: pointer;
+      border: 2px solid transparent;
+      object-fit: cover;
+    }
+    .thumbnails img.active {
+      border-color: #007bff;
+    }
+    button.order-btn {
+      margin-top: 10px; padding: 10px 15px; background: #2196F3; color: white;
+      border: none; border-radius: 5px; cursor: pointer;
+      font-weight: bold;
+    }
+    button.order-btn:hover {
+      background: #1976D2;
+    }
+    section {
+      max-width: 800px; margin: 40px auto; padding: 0 10px;
+    }
+    form {
+      display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto;
+    }
+    input, select {
+      padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background: #007bff; color: white; border: none; cursor: pointer; font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+    footer {
+      background: #222; color: white; text-align: center; padding: 20px;
+      font-size: 14px; position: fixed; bottom: 0; width: calc(100% - 220px);
+      margin-left: 220px;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative; width: 100%; height: auto; padding: 10px;
+      }
+      .main {
+        margin-left: 0;
+      }
+      footer {
+        width: 100%; margin-left: 0; position: relative;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="#home" class="active">🏠 Начало</a>
+    <a href="#products">🛒 Продукти</a>
+    <a href="#howtoorder">📦 Как да поръчам</a>
+    <a href="#orderform">📝 Форма за поръчка</a>
+    <a href="#contact">📞 Контакт</a>
+  </nav>
+  <main class="main">
+    <header id="home">
+      <h1>TonerXpress</h1>
+      <p>Вашият онлайн магазин за тонер касети</p>
+    </header>
+
+    <section id="products">
+      <h2>Продукти</h2>
+      <input type="text" id="search" placeholder="Търсене на продукт..." />
+      <div class="products-list">
+        <div class="product" data-name="HP 106A">
+          <img src="https://m.media-amazon.com/images/I/71L2MyFR1ML._AC_SL1500_.jpg" alt="HP 106A" />
+          <div class="thumbnails">
+            <img src="https://m.media-amazon.com/images/I/71L2MyFR1ML._AC_SL1500_.jpg" class="active" alt="HP 106A" />
+            <img src="https://www.officedepot.bg/img/product/42394-2-hp-laserjet-pro-mfp-m130nw-106a-toner-cartridge-original.jpg" alt="HP 106A alt" />
+          </div>
+          <h2>Тонер HP 106A</h2>
+          <p>Съвместим с: HP Laser 107a/107w/135a/135w</p>
+          <p>Капацитет: 1000 страници</p>
+          <p>Цена: 35.00 лв</p>
+          <button class="order-btn" data-product="Тонер HP 106A">Поръчай</button>
+        </div>
+        <div class="product" data-name="Canon 725">
+          <img src="https://m.media-amazon.com/images/I/51WSP5HMu1L._AC_SL1000_.jpg" alt="Canon 725" />
+          <div class="thumbnails">
+            <img src="https://m.media-amazon.com/images/I/51WSP5HMu1L._AC_SL1000_.jpg" class="active" alt="Canon 725" />
+            <img src="https://www.karousel.bg/photos/products/121504/toner-canon-725-cmy-original_2.jpg" alt="Canon 725 alt" />
+          </div>
+          <h2>Тонер Canon 725</h2>
+          <p>Съвместим с: Canon LBP 6000 / 6020 / MFP 3010</p>
+          <p>Капацитет: 1600 страници</p>
+          <p>Цена: 39.00 лв</p>
+          <button class="order-btn" data-product="Тонер Canon 725">Поръчай</button>
+        </div>
+        <div class="product" data-name="Samsung MLT-D111S">
+          <img src="https://m.media-amazon.com/images/I/61jLz5Y5SLL._AC_SL1500_.jpg" alt="Samsung MLT-D111S" />
+          <div class="thumbnails">
+            <img src="https://m.media-amazon.com/images/I/61jLz5Y5SLL._AC_SL1500_.jpg" class="active" alt="Samsung MLT-D111S" />
+            <img src="https://cdn1.bigcommerce.com/n-h7r5k/products/313/images/581/MLT-D111S__65739.1572544967.1280.1280.jpg?c=2" alt="Samsung 111S alt" />
+          </div>
+          <h2>Тонер Samsung MLT-D111S</h2>
+          <p>Съвместим с: Samsung ML-2510/2570</p>
+          <p>Капацитет: 1500 страници</p>
+          <p>Цена: 33.00 лв</p>
+          <button class="order-btn" data-product="Тонер Samsung MLT-D111S">Поръчай</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="howtoorder">
+      <h2>Как да поръчам?</h2>
+      <p>Изберете продукта, който желаете от списъка. Натиснете бутона "Поръчай" под избрания продукт и попълнете формата с вашите данни. След изпращане на формата ще се свържем с вас за потвърждение.</p>
+    </section>
+
+    <section id="orderform">
+      <h2>Форма за поръчка</h2>
+      <form id="orderForm">
+        <label for="customerName">Име и фамилия:</label>
+        <input type="text" id="customerName" name="customerName" required />
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9+ ]{6,15}" placeholder="+359 88 123 4567"/>
+
+        <label for="email">Имейл:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="productSelect">Избери продукт:</label>
+        <select id="productSelect" name="productSelect" required>
+          <option value="">-- Избери --</option>
+          <option value="Тонер HP 106A">Тонер HP 106A</option>
+          <option value="Тонер Canon 725">Тонер Canon 725</option>
+          <option value="Тонер Samsung MLT-D111S">Тонер Samsung MLT-D111S</option>
+        </select>
+
+        <input type="submit" value="Изпрати поръчката" />
+      </form>
+      <div id="orderMessage" style="color:green; font-weight:bold; margin-top: 15px;"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Контакт</h2>
+      <p>Телефон: 0888 123 456</p>
+      <p>Имейл: info@tonerxpress.bg</p>
+      <p>Адрес: София, бул. „Цариградско шосе“ 123</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 TonerXpress. Всички права запазени.
+  </footer>
+
+  <script>
+    // Меню навигация – маркира активен елемент
+    const links = document.querySelectorAll('.sidebar a');
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        links.forEach(l => l.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+
+    // Търсачка за продукти
+    const searchInput = document.getElementById('search');
+    const productsList = document.querySelector('.products-list');
+    searchInput.addEventListener('input', () => {
+      const filter = searchInput.value.toLowerCase();
+      const products = productsList.querySelectorAll('.product');
+      products.forEach(product => {
+        const name = product.getAttribute('data-name').toLowerCase();
+        product.style.display = name.includes(filter) ? 'block' : 'none';
+      });
+    });
+
+    // Галерия с картинки - смяна на основната снимка при клик върху миниатюра
+    document.querySelectorAll('.product').forEach(product => {
+      const mainImg = product.querySelector('img');
+      const thumbnails = product.querySelectorAll('.thumbnails img');
+      thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          // Сменяме основната снимка
+          mainImg.src = thumb.src;
+          // Активна миниатюра
+          thumbnails.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+        });
+      });
+    });
+
+    // Попълване на формата при натискане на бутон "Поръчай"
+    document.querySelectorAll('.order-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-product');
+        document.getElementById('productSelect').value = productName;
+        // Скрол до формата за поръчка
+        document.getElementById('orderform').scrollIntoView({behavior: 'smooth'});
+        // Маркираме менюто
+        links.forEach(l => l.classList.remove('active'));
+        document.querySelector('a[href="#orderform"]').classList.add('active');
+      });
+    });
+
+    // Обработка на изпращане на формата
+    const orderForm = document.getElementById('orderForm');
+    const orderMessage = document.getElementById('orderMessage');
+    orderForm.addEventListener('submit', e => {
+      e.preventDefault();
+      // Тук можеш да добавиш реална обработка, например изпращане на данни към сървър
+
+      orderMessage.textContent = 'Благодарим! Вашата поръчка беше получена.';
+      orderForm.reset();
+    });
+  </script>
+</body>
+</html>
