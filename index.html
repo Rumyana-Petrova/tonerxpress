@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>TonerXpress – Тонер касети</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; display: flex; }
-    .sidebar { width: 200px; background: #333; color: #fff; height: 100vh; position: fixed; top: 0; left: 0; padding-top: 30px; }
-    .sidebar a { display: block; color: white; padding: 12px 20px; text-decoration: none; }
+    .sidebar {
+      width: 200px; background: #333; color: #fff;
+      height: 100vh; position: fixed; top: 0; left: 0; padding-top: 30px;
+    }
+    .sidebar a {
+      display: block; color: white; padding: 12px 20px; text-decoration: none;
+    }
     .sidebar a:hover { background: #575757; }
-    .main { margin-left: 200px; flex: 1; padding-bottom: 100px; }
-    header { background: #222; color: white; padding: 20px; text-align: center; }
-    .hero { background: #007bff; color: white; padding: 40px 20px; text-align: center; }
-    .products { padding: 40px 20px; background: #fff; }
-    .product { background: #f9f9f9; border: 1px solid #ddd; border-radius: 10px; margin: 20px auto; padding: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center; max-width: 600px; }
-    .product img { width: 100%; height: auto; border-radius: 8px; }
-    .product h2 { font-size: 18px; color: #222; }
-    .product p { font-size: 14px; color: #555; }
-    .product button { margin-top: 10px; padding: 10px 15px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    .product button:hover { background: #1976D2; }
-    section { padding: 40px 20px; max-width: 800px; margin: auto; }
-    footer { background: #222; color: white; text-align: center; padding: 20px; font-size: 14px; position: fixed; bottom: 0; width: calc(100% - 200px); }
+    .main {
+      margin-left: 200px; flex: 1; padding-bottom: 100px;
+    }
+    header {
+      background: #222; color: white; padding: 20px; text-align: center;
+    }
+    .hero {
+      background: #007bff; color: white; padding: 40px 20px; text-align: center;
+    }
+    .products, section {
+      padding: 40px 20px; background: #fff; max-width: 700px; margin: auto;
+    }
+    .product {
+      background: #f9f9f9; border: 1px solid #ddd; border-radius: 10px;
+      margin: 20px 0; padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center;
+    }
+    .product img {
+      width: 100%; max-width: 300px; height: auto; border-radius: 8px;
+    }
+    .product h2 {
+      font-size: 20px; color: #222; margin: 10px 0 5px;
+    }
+    .product p {
+      font-size: 14px; color: #555; margin: 4px 0;
+    }
+    .product button, .hero button {
+      margin-top: 10px; padding: 10px 15px;
+      background: #2196F3; color: white;
+      border: none; border-radius: 5px; cursor: pointer;
+    }
+    .product button:hover, .hero button:hover {
+      background: #1976D2;
+    }
+    footer {
+      background: #222; color: white; text-align: center;
+      padding: 20px; font-size: 14px;
+      position: fixed; bottom: 0; width: calc(100% - 200px);
+    }
+    .chat-button {
+      position: fixed; bottom: 30px; right: 30px;
+      background: #28a745; color: white;
+      border: none; padding: 12px 20px; border-radius: 50px;
+      font-size: 16px; cursor: pointer; z-index: 999;
+    }
+    .chat-button:hover { background: #218838; }
   </style>
 </head>
 <body>
@@ -27,57 +66,90 @@
     <a href="#home">🏠 Начало</a>
     <a href="#products">🛒 Продукти</a>
     <a href="#howtoorder">📦 Как да поръчам</a>
+    <a href="#faq">❓ Въпроси</a>
+    <a href="#about">👤 За нас</a>
     <a href="#contact">📞 Контакт</a>
   </div>
+
   <div class="main">
     <header id="home">
       <h1>TonerXpress</h1>
       <p>Вашият онлайн магазин за тонер касети</p>
     </header>
 
-    <section id="products" class="products">
-      <h2>Продукти</h2>
+    <div class="hero">
+      <h2>Ниски цени, високо качество!</h2>
+      <p>Съвместими тонери с бърза доставка</p>
+      <a href="#products"><button>Виж продуктите</button></a>
+    </div>
+
+    <section id="products">
+      <h2>Модели тонер касети</h2>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71L2MyFR1ML._AC_SL1500_.jpg" alt="HP 106A">
-        <h2>Тонер HP 106A</h2>
+        <img src="https://m.media-amazon.com/images/I/71L2MyFR1ML._AC_SL1500_.jpg" alt="HP 106A" />
+        <h2>HP 106A</h2>
         <p>Съвместим с: HP Laser 107a/107w/135a/135w</p>
         <p>Капацитет: 1000 страници</p>
         <p>Цена: 35.00 лв</p>
-        <button>Поръчай</button>
+        <button onclick="location.href='mailto:info@tonerxpress.bg?subject=Поръчка HP 106A'">Поръчай</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/51WSP5HMu1L._AC_SL1000_.jpg" alt="Canon 725">
-        <h2>Тонер Canon 725</h2>
+        <img src="https://m.media-amazon.com/images/I/51WSP5HMu1L._AC_SL1000_.jpg" alt="Canon 725" />
+        <h2>Canon 725</h2>
         <p>Съвместим с: Canon LBP 6000 / 6020 / MFP 3010</p>
         <p>Капацитет: 1600 страници</p>
         <p>Цена: 39.00 лв</p>
-        <button>Поръчай</button>
+        <button onclick="location.href='mailto:info@tonerxpress.bg?subject=Поръчка Canon 725'">Поръчай</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61jLz5Y5SLL._AC_SL1500_.jpg" alt="Samsung MLT-D111S">
-        <h2>Тонер Samsung MLT-D111S</h2>
+        <img src="https://m.media-amazon.com/images/I/61jLz5Y5SLL._AC_SL1500_.jpg" alt="Samsung MLT-D111S" />
+        <h2>Samsung MLT-D111S</h2>
         <p>Съвместим с: Samsung Xpress M2020 / M2070</p>
         <p>Капацитет: 1000 страници</p>
         <p>Цена: 42.00 лв</p>
-        <button>Поръчай</button>
+        <button onclick="location.href='mailto:info@tonerxpress.bg?subject=Поръчка Samsung MLT-D111S'">Поръчай</button>
       </div>
     </section>
 
     <section id="howtoorder">
       <h2>Как да поръчате?</h2>
-      <p>Изберете продукт и натиснете "Поръчай". Ще се свържем с вас за потвърждение и доставка чрез имейл или телефон.</p>
+      <ol>
+        <li>Изберете продукт</li>
+        <li>Натиснете "Поръчай" – ще се отвори имейл с автоматичен текст</li>
+        <li>Изпратете ни заявката</li>
+        <li>Ние ще се свържем с вас</li>
+        <li>Доставка чрез куриер</li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h2>Често задавани въпроси</h2>
+      <p><strong>Има ли гаранция?</strong><br>Да, всички продукти са с гарантирано качество.</p>
+      <p><strong>Как се доставят?</strong><br>С куриер в рамките на 1–2 работни дни.</p>
+      <p><strong>Начин на плащане?</strong><br>С наложен платеж или банков превод.</p>
+    </section>
+
+    <section id="about">
+      <h2>За нас</h2>
+      <p>TonerXpress е български онлайн магазин за качествени съвместими тонер касети. Работим с доказани доставчици и осигуряваме бърза доставка и коректно обслужване.</p>
     </section>
 
     <section id="contact">
-      <h2>Контакт с нас</h2>
+      <h2>Контакт</h2>
       <p>Имейл: info@tonerxpress.bg</p>
       <p>Телефон: +359 88 123 4567</p>
+      <p>Работно време: Понеделник – Петък, 09:00 – 18:00</p>
     </section>
 
     <footer>
       © 2025 TonerXpress – Всички права запазени.
     </footer>
   </div>
+
+  <!-- Chat бутон -->
+  <button class="chat-button" onclick="alert('Свържете се с нас на Viber: +359 88 123 4567 или пишете на info@tonerxpress.bg')">
+    💬 Чат
+  </button>
+
 </body>
 </html>
-
